@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   ArrowUpRight,
@@ -10,35 +10,35 @@ import {
   ShieldCheck,
   Sparkles,
   X,
-} from 'lucide-react';
-import Image from 'next/image';
-import { motion, useReducedMotion } from 'motion/react';
-import { useEffect, useState } from 'react';
-import { ThemeSwitcher } from '@/components/theme-switcher';
+} from "lucide-react";
+import Image from "next/image";
+import { motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 const services = [
   {
-    number: '01',
-    title: 'Facility management',
-    text: 'Thoughtful systems that keep spaces safe, functional, and comfortable every day.',
+    number: "01",
+    title: "Facility management",
+    text: "Thoughtful systems that keep spaces safe, functional, and comfortable every day.",
     icon: ShieldCheck,
   },
   {
-    number: '02',
-    title: 'Transport & logistics',
-    text: 'Reliable movement of people, goods, and ideas across every part of your operation.',
+    number: "02",
+    title: "Transport & logistics",
+    text: "Reliable movement of people, goods, and ideas across every part of your operation.",
     icon: Sparkles,
   },
   {
-    number: '03',
-    title: 'Cleaning & fumigation',
-    text: 'All-in-one care that protects your property and creates a healthier environment.',
+    number: "03",
+    title: "Cleaning & fumigation",
+    text: "All-in-one care that protects your property and creates a healthier environment.",
     icon: Check,
   },
   {
-    number: '04',
-    title: 'Farm settlement setup',
-    text: 'Practical planning and on-ground coordination for productive, well-run settlements.',
+    number: "04",
+    title: "Farm settlement setup",
+    text: "Practical planning and on-ground coordination for productive, well-run settlements.",
     icon: ArrowUpRight,
   },
 ];
@@ -49,13 +49,13 @@ export default function Page() {
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) =>
-      event.key === 'Escape' && setMenuOpen(false);
+      event.key === "Escape" && setMenuOpen(false);
     const closeOnDesktop = () => window.innerWidth >= 768 && setMenuOpen(false);
-    window.addEventListener('keydown', closeOnEscape);
-    window.addEventListener('resize', closeOnDesktop);
+    window.addEventListener("keydown", closeOnEscape);
+    window.addEventListener("resize", closeOnDesktop);
     return () => {
-      window.removeEventListener('keydown', closeOnEscape);
-      window.removeEventListener('resize', closeOnDesktop);
+      window.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("resize", closeOnDesktop);
     };
   }, []);
 
@@ -64,7 +64,7 @@ export default function Page() {
       <motion.header
         initial={reduceMotion ? false : { opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, ease: 'easeOut' }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10"
       >
         <a
@@ -81,14 +81,14 @@ export default function Page() {
             priority
           />
           <span className="font-semibold tracking-tight">
-            Bimms{' '}
+            Bimms{" "}
             <span className="font-normal text-muted-foreground">
               Consulting
             </span>
           </span>
         </a>
         <nav
-          className={`${menuOpen ? 'flex' : 'hidden'} absolute left-6 right-6 top-20 z-10 flex-col gap-5 rounded-2xl border border-border bg-background p-6 shadow-xl md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+          className={`${menuOpen ? "flex" : "hidden"} absolute left-6 right-6 top-20 z-10 flex-col gap-5 rounded-2xl border border-border bg-background p-6 shadow-xl md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
         >
           <a
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -119,11 +119,11 @@ export default function Page() {
             Download CV <Download className="size-4" />
           </a>
         </nav>
-        <div className={'flex items-center gap-2'}>
+        <div className={"flex items-center gap-2"}>
           <ThemeSwitcher />
           <button
             className="md:hidden"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -138,7 +138,7 @@ export default function Page() {
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.08, ease: 'easeOut' }}
+          transition={{ duration: 0.7, delay: 0.08, ease: "easeOut" }}
         >
           <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-accent">
             <span className="h-px w-8 bg-accent" /> Real estate operations
@@ -168,7 +168,7 @@ export default function Page() {
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.16, ease: 'easeOut' }}
+          transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
           className="relative flex min-h-[390px] items-end justify-center lg:min-h-[500px]"
         >
           <div className="absolute right-4 top-0 h-72 w-72 rounded-full border border-accent/40 sm:right-16 sm:h-96 sm:w-96" />
@@ -214,7 +214,7 @@ export default function Page() {
           </div>
           <div>
             <h2 className="max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
-              Hi, I&apos;m Biola. I turn the moving parts of real estate into{' '}
+              Hi, I&apos;m Biola. I turn the moving parts of real estate into{" "}
               <em className="text-accent">peace of mind.</em>
             </h2>
             <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground">
@@ -276,16 +276,16 @@ export default function Page() {
               Start a conversation
             </p>
             <h2 className="mt-5 max-w-2xl font-serif text-5xl leading-tight tracking-tight sm:text-6xl">
-              Let&apos;s make your space work{' '}
+              Let&apos;s make your space work{" "}
               <em className="text-accent">better.</em>
             </h2>
           </div>
           <div className="flex flex-col gap-5 text-sm">
             <a
               className="flex items-center gap-3 hover:text-accent"
-              href="tel:+234708602634"
+              href="tel:+2347086082634"
             >
-              <Phone className="size-4" /> 0708 602 634
+              <Phone className="size-4" /> 0708 6082 634
             </a>
             <a
               className="flex items-center gap-3 hover:text-accent"
